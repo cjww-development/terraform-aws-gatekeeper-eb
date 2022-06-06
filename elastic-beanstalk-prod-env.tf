@@ -59,4 +59,10 @@ resource "aws_elastic_beanstalk_environment" "web_server_prod" {
     name      = "ListenerEnabled"
     value     = true
   }
+
+  setting {
+    namespace = "aws:elb:listener:80"
+    name      = "ListenerEnabled"
+    value     = false
+  }
 }
