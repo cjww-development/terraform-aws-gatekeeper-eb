@@ -10,4 +10,10 @@ resource "aws_elastic_beanstalk_environment" "web_server_prod" {
   solution_stack_name = data.aws_elastic_beanstalk_solution_stack.stack.name
 
   tier = "WebServer"
+
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
+    name      = "IamInstanceProfile"
+    value     = aws_iam_instance_profile.aws_eb_ec2_instance_profile.name
+  }
 }
