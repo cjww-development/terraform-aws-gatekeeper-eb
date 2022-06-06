@@ -5,7 +5,8 @@ config {
 
 plugin "aws" {
   enabled = true
-  deep_check = false
+  version = "0.13.4"
+  source  = "github.com/terraform-linters/tflint-ruleset-aws"
 }
 
 rule "terraform_deprecated_interpolation" {
