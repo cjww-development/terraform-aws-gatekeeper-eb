@@ -16,4 +16,47 @@ resource "aws_elastic_beanstalk_environment" "web_server_prod" {
     name      = "IamInstanceProfile"
     value     = aws_iam_instance_profile.aws_eb_ec2_instance_profile.name
   }
+
+  setting {
+    namespace = "aws:autoscaling:asg"
+    name      = "Availability Zones"
+    value     = var.valid_azs
+  }
+
+
+  setting {
+    namespace = "aws:ec2:instances"
+    name      = "InstanceTypes"
+    value     = join(",", var.instance_types)
+  }
+
+  setting {
+    namespace = "aws:elb:listener:443"
+    name      = "ListenerProtocol"
+    value     = "HTTPS"
+  }
+
+  setting {
+    namespace = "aws:elb:listener:443"
+    name      = "InstancePort"
+    value     = 80
+  }
+
+  setting {
+    namespace = "aws:elb:listener:443"
+    name      = "InstanceProtocol"
+    value     = "HTTP"
+  }
+
+  setting {
+    namespace = "aws:elb:listener:443"
+    name      = "SSLCertificateId"
+    value     = data.aws_acm_certificate.gk_cert.arn
+  }
+
+  setting {
+    namespace = "aws:elb:listener:443"
+    name      = "ListenerEnabled"
+    value     = true
+  }
 }

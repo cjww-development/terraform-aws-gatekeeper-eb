@@ -31,6 +31,7 @@ No modules.
 | [aws_elastic_beanstalk_environment.web_server_prod](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elastic_beanstalk_environment) | resource |
 | [aws_iam_instance_profile.aws_eb_ec2_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
 | [aws_iam_role.aws_eb_ec2_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_acm_certificate.gk_cert](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/acm_certificate) | data source |
 | [aws_elastic_beanstalk_solution_stack.stack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/elastic_beanstalk_solution_stack) | data source |
 | [aws_iam_policy_document.assume_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
@@ -38,9 +39,12 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_custom_domain"></a> [custom\_domain](#input\_custom\_domain) | The custom domain for the web server environment | `string` | n/a | yes |
 | <a name="input_elastic_beanstalk_app_name"></a> [elastic\_beanstalk\_app\_name](#input\_elastic\_beanstalk\_app\_name) | The name of the elastic beanstalk application | `string` | n/a | yes |
+| <a name="input_instance_types"></a> [instance\_types](#input\_instance\_types) | The EC2 instance types used by the app servers | `list(string)` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | The AWS region the IaC will be deployed into | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags associated with all deployed IaC resources | `map(string)` | n/a | yes |
+| <a name="input_valid_azs"></a> [valid\_azs](#input\_valid\_azs) | The AWS availability zones the app servers should run in | `string` | n/a | yes |
 | <a name="input_web_server_prod_name"></a> [web\_server\_prod\_name](#input\_web\_server\_prod\_name) | Name of web server prod environment | `string` | n/a | yes |
 
 ## Outputs
