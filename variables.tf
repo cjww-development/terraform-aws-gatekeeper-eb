@@ -57,3 +57,18 @@ variable "rolling_update_type" {
   type        = string
   description = "This includes three types: time-based rolling updates, health-based rolling updates, and immutable updates. Time-based rolling updates apply a PauseTime between batches. Health-based rolling updates wait for new instances to pass health checks before moving on to the next batch. Immutable updates launch a full set of instances in a new Auto Scaling group."
 }
+
+variable "default_vpc_id" {
+  type        = string
+  description = "The id of the default VPC in the region"
+}
+
+variable "inbound_ip_addresses" {
+  type        = set(string)
+  description = "The set of source IP addresses that are allowed to connect"
+}
+
+variable "outbound_ip_addresses" {
+  type        = set(string)
+  description = "The set of IP addresses that can be accessed on outbound connections"
+}

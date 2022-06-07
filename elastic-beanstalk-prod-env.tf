@@ -95,4 +95,22 @@ resource "aws_elastic_beanstalk_environment" "web_server_prod" {
     name      = "RollingUpdateType"
     value     = var.rolling_update_type
   }
+
+  setting {
+    namespace = "aws:ec2:vpc"
+    name      = "VPCId"
+    value     = data.aws_vpc.default_vpc.id
+  }
+
+  setting {
+    namespace = "aws:ec2:vpc"
+    name      = "Subnets"
+    value     = join(",", data.aws_subnets.default_subnets.ids)
+  }
+
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
+    name      = "SecurityGroups"
+    value     = aws_security_group.ip_block.id
+  }
 }
