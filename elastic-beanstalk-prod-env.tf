@@ -83,4 +83,16 @@ resource "aws_elastic_beanstalk_environment" "web_server_prod" {
     name      = "MaxSize"
     value     = var.max_instance_count
   }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:command"
+    name      = "DeploymentPolicy"
+    value     = var.deployment_policy
+  }
+
+  setting {
+    namespace = "aws:autoscaling:updatepolicy:rollingupdate"
+    name      = "RollingUpdateType"
+    value     = var.rolling_update_type
+  }
 }

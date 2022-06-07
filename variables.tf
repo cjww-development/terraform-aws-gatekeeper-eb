@@ -47,3 +47,13 @@ variable "max_instance_count" {
   type        = number
   description = "The maximum number of instances that can be running under peak load"
 }
+
+variable "deployment_policy" {
+  type        = string
+  description = "Choose a deployment policy for application version deployments"
+}
+
+variable "rolling_update_type" {
+  type        = string
+  description = "This includes three types: time-based rolling updates, health-based rolling updates, and immutable updates. Time-based rolling updates apply a PauseTime between batches. Health-based rolling updates wait for new instances to pass health checks before moving on to the next batch. Immutable updates launch a full set of instances in a new Auto Scaling group."
+}
