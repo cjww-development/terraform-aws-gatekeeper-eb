@@ -73,7 +73,7 @@ variable "outbound_ip_addresses" {
   description = "The set of IP addresses that can be accessed on outbound connections"
 }
 
-#variable "ecr_arm64_repo_name" {
-#  type        = string
-#  description = "The name of the ECR that stores arm64 images"
-#}
+variable "ecr_arm64_repo_name" {
+  type        = string
+  description = "The name of the ECR that stores arm64 images"
+}

@@ -27,6 +27,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_ecr_repository.gatekeeper_arm64](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository) | resource |
 | [aws_elastic_beanstalk_application.gatekeeper](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elastic_beanstalk_application) | resource |
 | [aws_elastic_beanstalk_environment.web_server_prod](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elastic_beanstalk_environment) | resource |
 | [aws_iam_instance_profile.aws_eb_ec2_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
@@ -45,6 +46,7 @@ No modules.
 | <a name="input_custom_domain"></a> [custom\_domain](#input\_custom\_domain) | The custom domain for the web server environment | `string` | n/a | yes |
 | <a name="input_default_vpc_id"></a> [default\_vpc\_id](#input\_default\_vpc\_id) | The id of the default VPC in the region | `string` | n/a | yes |
 | <a name="input_deployment_policy"></a> [deployment\_policy](#input\_deployment\_policy) | Choose a deployment policy for application version deployments | `string` | n/a | yes |
+| <a name="input_ecr_arm64_repo_name"></a> [ecr\_arm64\_repo\_name](#input\_ecr\_arm64\_repo\_name) | The name of the ECR that stores arm64 images | `string` | n/a | yes |
 | <a name="input_elastic_beanstalk_app_name"></a> [elastic\_beanstalk\_app\_name](#input\_elastic\_beanstalk\_app\_name) | The name of the elastic beanstalk application | `string` | n/a | yes |
 | <a name="input_environment_type"></a> [environment\_type](#input\_environment\_type) | The type of elastic beanstalk environment to deploy, LoadBalanced or SingleInstance | `string` | n/a | yes |
 | <a name="input_inbound_ip_addresses"></a> [inbound\_ip\_addresses](#input\_inbound\_ip\_addresses) | The set of source IP addresses that are allowed to connect | `set(string)` | n/a | yes |
