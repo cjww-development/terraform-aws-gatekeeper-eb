@@ -71,4 +71,16 @@ resource "aws_elastic_beanstalk_environment" "web_server_prod" {
     name      = "EnvironmentType"
     value     = var.environment_type
   }
+
+  setting {
+    namespace = "aws:autoscaling:asg"
+    name      = "MinSize"
+    value     = var.min_instance_count
+  }
+
+  setting {
+    namespace = "aws:autoscaling:asg"
+    name      = "MaxSize"
+    value     = var.max_instance_count
+  }
 }

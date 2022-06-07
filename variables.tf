@@ -37,3 +37,13 @@ variable "environment_type" {
   type        = string
   description = "The type of elastic beanstalk environment to deploy, LoadBalanced or SingleInstance"
 }
+
+variable "min_instance_count" {
+  type        = number
+  description = "The minimum number of instances that should be running at all times"
+}
+
+variable "max_instance_count" {
+  type        = number
+  description = "The maximum number of instances that can be running under peak load"
+}

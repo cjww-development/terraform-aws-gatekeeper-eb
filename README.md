@@ -43,6 +43,8 @@ No modules.
 | <a name="input_elastic_beanstalk_app_name"></a> [elastic\_beanstalk\_app\_name](#input\_elastic\_beanstalk\_app\_name) | The name of the elastic beanstalk application | `string` | n/a | yes |
 | <a name="input_environment_type"></a> [environment\_type](#input\_environment\_type) | The type of elastic beanstalk environment to deploy, LoadBalanced or SingleInstance | `string` | n/a | yes |
 | <a name="input_instance_types"></a> [instance\_types](#input\_instance\_types) | The EC2 instance types used by the app servers | `list(string)` | n/a | yes |
+| <a name="input_max_instance_count"></a> [max\_instance\_count](#input\_max\_instance\_count) | The maximum number of instances that can be running under peak load | `number` | n/a | yes |
+| <a name="input_min_instance_count"></a> [min\_instance\_count](#input\_min\_instance\_count) | The minimum number of instances that should be running at all times | `number` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | The AWS region the IaC will be deployed into | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags associated with all deployed IaC resources | `map(string)` | n/a | yes |
 | <a name="input_valid_azs"></a> [valid\_azs](#input\_valid\_azs) | The AWS availability zones the app servers should run in | `string` | n/a | yes |
