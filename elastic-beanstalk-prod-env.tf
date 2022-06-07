@@ -119,4 +119,10 @@ resource "aws_elastic_beanstalk_environment" "web_server_prod" {
     name      = "SecurityGroups"
     value     = aws_security_group.ip_block.id
   }
+
+  setting {
+    namespace = "aws:elb:loadbalancer"
+    name      = "ManagedSecurityGroup"
+    value     = aws_security_group.ip_block.id
+  }
 }
