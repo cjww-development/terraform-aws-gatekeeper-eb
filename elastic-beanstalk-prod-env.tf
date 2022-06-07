@@ -65,4 +65,10 @@ resource "aws_elastic_beanstalk_environment" "web_server_prod" {
     name      = "ListenerEnabled"
     value     = false
   }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:environment"
+    name      = "EnvironmentType"
+    value     = var.environment_type
+  }
 }

@@ -32,3 +32,8 @@ variable "instance_types" {
   type        = list(string)
   description = "The EC2 instance types used by the app servers"
 }
+
+variable "environment_type" {
+  type        = string
+  description = "The type of elastic beanstalk environment to deploy, LoadBalanced or SingleInstance"
+}

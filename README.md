@@ -41,6 +41,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_custom_domain"></a> [custom\_domain](#input\_custom\_domain) | The custom domain for the web server environment | `string` | n/a | yes |
 | <a name="input_elastic_beanstalk_app_name"></a> [elastic\_beanstalk\_app\_name](#input\_elastic\_beanstalk\_app\_name) | The name of the elastic beanstalk application | `string` | n/a | yes |
+| <a name="input_environment_type"></a> [environment\_type](#input\_environment\_type) | The type of elastic beanstalk environment to deploy, LoadBalanced or SingleInstance | `string` | n/a | yes |
 | <a name="input_instance_types"></a> [instance\_types](#input\_instance\_types) | The EC2 instance types used by the app servers | `list(string)` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | The AWS region the IaC will be deployed into | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags associated with all deployed IaC resources | `map(string)` | n/a | yes |
