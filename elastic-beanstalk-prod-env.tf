@@ -125,4 +125,65 @@ resource "aws_elastic_beanstalk_environment" "web_server_prod" {
     name      = "ManagedSecurityGroup"
     value     = aws_security_group.ip_block.id
   }
+
+  #Application config
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "EMAIL_FROM"
+    value     = var.email_from
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "MONGO_URI"
+    value     = var.mongo_uri
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "APP_SECRET"
+    value     = var.app_secret
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "ENC_KEY"
+    value     = var.enc_key
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "MFA_ISSUER"
+    value     = var.mfa_issuer
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "SMS_SENDER_ID"
+    value     = var.sms_sender_id
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "WKC_ISSUER"
+    value     = var.wkc_issuer
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "EMAIL_PROVIDER"
+    value     = var.email_provider
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "AWS_REGION"
+    value     = var.ses_aws_region
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "AWS_IDENTITY_ARN"
+    value     = var.ses_aws_identity_arn
+  }
 }

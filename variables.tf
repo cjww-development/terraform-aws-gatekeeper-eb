@@ -77,3 +77,53 @@ variable "ecr_arm64_repo_name" {
   type        = string
   description = "The name of the ECR that stores arm64 images"
 }
+
+variable "email_from" {
+  type        = string
+  description = "Which email address email messages are from"
+}
+
+variable "mongo_uri" {
+  type        = string
+  description = "Connection string used to connect to MongoDB"
+}
+
+variable "app_secret" {
+  type        = string
+  description = "A secret used by the running application"
+}
+
+variable "enc_key" {
+  type        = string
+  description = "A key used to encode / encrypt data"
+}
+
+variable "mfa_issuer" {
+  type        = string
+  description = "The string displayed in Google Authenticator to describe the TOTP"
+}
+
+variable "sms_sender_id" {
+  type        = string
+  description = "The string used to say where SMS messages have come from"
+}
+
+variable "wkc_issuer" {
+  type        = string
+  description = "The well known config issuer url"
+}
+
+variable "email_provider" {
+  type        = string
+  description = "The third party service that sends email messages"
+}
+
+variable "ses_aws_region" {
+  type        = string
+  description = "The AWS region that SES is being used in"
+}
+
+variable "ses_aws_identity_arn" {
+  type        = string
+  description = "The ARN of the identity used to send email messages"
+}
